@@ -1,0 +1,7 @@
+{
+  "name": "what-to-buy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
