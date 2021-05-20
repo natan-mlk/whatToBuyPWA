@@ -8,18 +8,20 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 import { TabsPage } from './tabs.page';
 import { WspolneComponent } from './wspolne/wspolne.component';
 import { NatanComponent } from './natan/natan.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule,
+    TabsPageRoutingModule
   ],
   declarations: [
     TabsPage,
     WspolneComponent,
-    NatanComponent
+    NatanComponent,
+    ListComponent
   ]
 })
 export class TabsPageModule {}
