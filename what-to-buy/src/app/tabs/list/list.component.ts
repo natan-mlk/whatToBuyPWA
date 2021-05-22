@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
+// import { SHOPPING_LIST } from 'src/assets/database-mockup';
 import { PopoverMenuComponent } from '../popover-menu/popover-menu.component';
+import { ListModel } from './list.model';
 
 @Component({
   selector: 'app-list',
@@ -10,7 +12,8 @@ import { PopoverMenuComponent } from '../popover-menu/popover-menu.component';
 export class ListComponent implements OnInit {
 
   constructor(
-    public popoverController: PopoverController
+    public popoverController: PopoverController,
+    @Inject('SHOPPING_LIST') readonly shoppingList: ListModel[]
   ) { }
 
   ngOnInit() {}
