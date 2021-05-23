@@ -20,7 +20,12 @@
 </div>
 
 <div class="list_toolbar">
-
+  <ion-item>
+    <ion-button slot="end" size="small" color="secondary">Secondary</ion-button>
+    <ion-button slot="end" size="small" color="danger" (click)="sortByImportance()">
+      <ion-icon name="arrow-up"></ion-icon>
+    </ion-button>
+  </ion-item>
 </div>
 
 <ion-list style="height: 100%; overflow: auto;">

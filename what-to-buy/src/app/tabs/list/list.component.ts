@@ -63,6 +63,12 @@ export class ListComponent implements OnInit {
     }
   }
 
+  sortByImportance(){
+    this.displayShoppingList.sort(
+      (a, b) => b.priority - a.priority
+    )
+  }
+
   segmentKindChanged(event){
     const sortingKey = event.detail.value;
     console.log(event)
