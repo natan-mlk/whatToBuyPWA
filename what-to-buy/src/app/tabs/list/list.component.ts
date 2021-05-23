@@ -11,12 +11,18 @@ import { ListModel } from './list.model';
 })
 export class ListComponent implements OnInit {
 
+  localShoppingList: ListModel[];
+  displayShoppingList: ListModel[];
+
   constructor(
     public popoverController: PopoverController,
     @Inject('SHOPPING_LIST') readonly shoppingList: ListModel[]
-  ) { }
+  ) { 
+    this.localShoppingList = shoppingList;
+    this.displayShoppingList = this.localShoppingList;
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
@@ -33,6 +39,35 @@ export class ListComponent implements OnInit {
     popover.onDidDismiss().then((result) => {
       console.log(result);
     });
+  }
+
+  setColor(priority){
+    switch(priority) {
+      case 0:
+        return 'primary';
+      case 1:
+        return 'warning';
+      case 2:
+        return 'danger';
+    }
+  }
+
+  segmentKindChanged(event){
+    const sortingKey = event.detail.value;
+    console.log(event)
+    this.filterByKind(sortingKey);
+  }
+
+  private filterByKind(sortingKey) {
+    this.displayShoppingList = this.localShoppingList.filter(
+      (arrayItem)=> {
+        if(sortingKey === arrayItem.kind) {
+          return arrayItem;
+        } else if (sortingKey === 'all') {
+          return arrayItem;
+        }
+      }
+    )
   }
 
 }
