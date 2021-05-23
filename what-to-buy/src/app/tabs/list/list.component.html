@@ -19,23 +19,17 @@
   </ion-segment>
 </div>
 
-<!-- detail: {value: "Jedzenie"} -->
+<div class="list_toolbar">
+
+</div>
 
 <ion-list style="height: 100%; overflow: auto;">
-  <ion-list-header>
-    Lista
-  </ion-list-header>
-
   <ng-container *ngFor="let item of displayShoppingList" >
     <ion-item [color]="setColor(item.priority)">
+    <ion-icon slot="start" [name]="getIconName(item.kind)"></ion-icon> 
     <ion-icon slot="end" name="logo-ionic" (click)="presentPopover($event)"></ion-icon>
     <ion-label>{{item.name}}</ion-label>
   </ion-item>
   </ng-container>
 
 </ion-list>
-<!-- </ion-content> -->
-
-
-
-

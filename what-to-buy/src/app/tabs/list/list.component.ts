@@ -52,6 +52,17 @@ export class ListComponent implements OnInit {
     }
   }
 
+  getIconName(kind) {
+    switch(kind) {
+      case 'cosmetics':
+        return 'sparkles-outline';
+      case 'food':
+        return 'basket-outline';
+      case 'other':
+        return 'apps-outline';
+    }
+  }
+
   segmentKindChanged(event){
     const sortingKey = event.detail.value;
     console.log(event)
