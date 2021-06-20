@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
 
   constructor(
     public popoverController: PopoverController,
-    @Inject('SHOPPING_LIST') readonly shoppingList: ListModel[]
+    @Inject('SHOPPING_LIST') readonly shoppingList: ListModel[] // NOTE dobra praktyka - zewnętrzne zależności wkładać za pomocą @Inject (dependency injection)
   ) { 
     this.localShoppingList = shoppingList;
     this.displayShoppingList = this.localShoppingList;
@@ -24,14 +24,17 @@ export class ListComponent implements OnInit {
 
   ngOnInit() { }
 
-  async presentPopover(ev: any) {
+  // TODO wróć do teorii promisów, await
+ 
+  async presentPopover(event: any, selectedItem: ListModel) {
     const popover = await this.popoverController.create({
       component: PopoverMenuComponent,
       cssClass: 'my-custom-class',
-      event: ev,
+      event: event,
       translucent: false,
       componentProps: {
-        site: 'closeME'
+        selectedItem: selectedItem,
+        shoppingList : this.localShoppingList
       },
     });
     await popover.present();
@@ -71,7 +74,6 @@ export class ListComponent implements OnInit {
 
   segmentKindChanged(event){
     const sortingKey = event.detail.value;
-    console.log(event)
     this.filterByKind(sortingKey);
   }
 

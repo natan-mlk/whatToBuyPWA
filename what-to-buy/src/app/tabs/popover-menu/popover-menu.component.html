@@ -1,7 +1,15 @@
-<p>
-  Jak najszybciej
-</p>
+<ion-item color="danger" (click)="changePriority(0)">
+  Koniecznie!
+</ion-item>
 
-<p (click)="close()">
-  {{site}}
-</p>
+<ion-item color="warning" (click)="changePriority(1)">
+  Niedługo zabraknie
+</ion-item>
+
+<ion-item color="primary" (click)="changePriority(2)">
+  Już jest
+</ion-item>
+
+<ion-item>
+  Skasuj
+</ion-item>

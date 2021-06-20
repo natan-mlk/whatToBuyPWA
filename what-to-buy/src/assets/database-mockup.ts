@@ -1,6 +1,6 @@
 export const SHOPPING_LIST =  [
             {
-                "name": "papier",
+                "name": "papier 1",
                 "priority": 0,
                 "kind": "cosmetics"
             },
@@ -30,62 +30,62 @@ export const SHOPPING_LIST =  [
                 "kind": "other"
             },
             {
-                "name": "papier",
+                "name": "papier 2",
                 "priority": 0,
                 "kind": "cosmetics"
             },
             {
-                "name": "płyn do prania",
+                "name": "płyn do prania 1",
                 "priority": 1,
                 "kind": "cosmetics"
             },
             {
-                "name": "soczek",
+                "name": "soczek 2",
                 "priority": 0,
                 "kind": "food"
             },
             {
-                "name": "chlebek",
+                "name": "chlebek 2",
                 "priority": 1,
                 "kind": "food"
             },
             {
-                "name": "szampon",
+                "name": "szampon 2",
                 "priority": 2,
                 "kind": "cosmetics"
             },
             {
-                "name": "jedzenie dla psa",
+                "name": "jedzenie dla psa 2",
                 "priority": 1,
                 "kind": "other"
             },
             {
-                "name": "papier",
+                "name": "papier 3",
                 "priority": 0,
                 "kind": "cosmetics"
             },
             {
-                "name": "płyn do prania",
+                "name": "płyn do prania 2",
                 "priority": 1,
                 "kind": "cosmetics"
             },
             {
-                "name": "soczek",
+                "name": "soczek 3",
                 "priority": 0,
                 "kind": "food"
             },
             {
-                "name": "chlebek",
+                "name": "chlebek 3",
                 "priority": 1,
                 "kind": "food"
             },
             {
-                "name": "szampon",
+                "name": "szampon 3",
                 "priority": 2,
                 "kind": "cosmetics"
             },
             {
-                "name": "jedzenie dla psa",
+                "name": "jedzenie dla psa 3",
                 "priority": 1,
                 "kind": "other"
             },

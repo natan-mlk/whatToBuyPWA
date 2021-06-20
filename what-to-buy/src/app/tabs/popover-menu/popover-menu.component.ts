@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
+import { ListModel } from '../list/list.model';
 
 @Component({
   selector: 'app-popover-menu',
@@ -8,7 +9,8 @@ import { PopoverController } from '@ionic/angular';
 })
 export class PopoverMenuComponent implements OnInit {
 
-  site: string;
+  selectedItem: ListModel;
+  shoppingList: ListModel[];
 
   constructor(
     private popoverController: PopoverController
@@ -16,8 +18,13 @@ export class PopoverMenuComponent implements OnInit {
 
   ngOnInit() {}
 
-  close() {
-    this.popoverController.dismiss('close ME', 'some role');
+  changePriority(priority: number){
+    // jak usunąć z listy? Nie mam do dyspozycji ID
+    this.close(priority);
+  }
+
+  private close(priority: number) {
+    this.popoverController.dismiss(this.shoppingList, 'some role');
   }
 
 }

@@ -21,7 +21,10 @@
 
 <div class="list_toolbar">
   <ion-item>
-    <ion-button slot="end" size="small" color="secondary">Secondary</ion-button>
+    <ion-button slot="end" size="small" color="secondary">
+      <ion-icon name="add"></ion-icon>
+      Nowy
+    </ion-button>
     <ion-button slot="end" size="small" color="danger" (click)="sortByImportance()">
       <ion-icon name="arrow-up"></ion-icon>
     </ion-button>
@@ -32,9 +35,8 @@
   <ng-container *ngFor="let item of displayShoppingList" >
     <ion-item [color]="setColor(item.priority)">
     <ion-icon slot="start" [name]="getIconName(item.kind)"></ion-icon> 
-    <ion-icon slot="end" name="logo-ionic" (click)="presentPopover($event)"></ion-icon>
+    <ion-icon slot="end" name="ellipsis-vertical-outline" (click)="presentPopover($event, item)"></ion-icon>
     <ion-label>{{item.name}}</ion-label>
   </ion-item>
   </ng-container>
-
 </ion-list>
